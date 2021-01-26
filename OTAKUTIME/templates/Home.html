@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        {% block content %}
+        <title>Otaku Time</title>
+  
+    </head>
+    <body>
+        <h1>Otaku Time</h1>
+        <p>Welcome</p>
+        <a href="{%url 'VIDEO_PAGE:video_page'%}">Videos</a>
+        <a href="{%url 'WALLPAPER_PAGE:wallpaper_page'%}">Wallpapers</a>
+        <a href="{%url 'SONG_PAGE:song_page'%}">Songs</a>
+    </body>
+    {% endblock %}
+  </html>

@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block title%}
+
+{%endblock%}
+
+{%block content%}
+<div class="container">
+  <h1>Videos</h1>
+  <li>
+    <li>
+      {% if user.is_authenticated %}
+      <a href="{% url 'VIDEO_PAGE:create' %}">Upload new Video</a>
+    
+      <a href="{% url 'VIDEO_PAGE:profile_video_page' %}">My Posts</a>
+    
+      {% endif %}
+    
+    
+    </li>
+  </li>
+  {% for video in video %}
+  <h2><a href="{% url 'VIDEO_PAGE:detail' slug=video.slug %}">{{video.title}}</a></h2>
+  <video width="256" height="144" controls="controls">       
+    <source src="{{video.video.url}}" type="video/mp4"> 
+   </video>  
+  <p>{{video.snippet}}</p>
+  <p>{{video.date}}</p> 
+  {% endfor %}
+</div>
+<a href="{% url 'home' %}">Return</a>
+{% endblock %}
+  
+

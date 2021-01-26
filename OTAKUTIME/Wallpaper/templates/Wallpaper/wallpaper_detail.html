@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="wallpaper_detail">
+    
+    
+
+
+        <h2>{{wallpaper.title}}</h2>
+
+
+       
+        <img src="{{wallpaper.wallpaper.url}}" alt>
+        
+
+
+
+
+        <p>{{wallpaper.body}}</p>
+
+    
+    <a href="{% url 'WALLPAPER_PAGE:wallpaper_page' %}">Return</a>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,59 @@
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+         
+            <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li>
+                    
+                    <form action="{% url 'Accounts:logout' %}" method = "post">
+                        {% csrf_token %}
+                       <button type="submit">Logout</button>
+                    </form>
+                    <form action="{% url 'Accounts:profile' %}" method = "post">
+                        {% csrf_token %}
+                       <button type="submit">My Profile</button>
+                    </form>
+
+                    <form action="{% url 'Accounts:editprofile' %}" method = "post">
+                        {% csrf_token %}
+                       <button type="submit">Edit Profile</button>
+                    </form>
+
+                </li>
+                {% else %}
+                <li>
+                    <form action="{% url 'Accounts:signup' %}" method = "post">
+                        {% csrf_token %}
+                       <button type="submit">signup</button>
+                    </form>
+
+                    
+                    <form action="{% url 'Accounts:login' %}" method = "post">
+                        {% csrf_token %}
+                       <button type="submit">Login</button>
+                    </form>
+
+
+                    
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        
+        
+          
+        
+
+        {% block content %}
+
+        {% endblock %}
+
+        
+    </body>
+    </html>

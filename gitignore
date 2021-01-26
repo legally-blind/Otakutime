@@ -1,0 +1,4 @@
+/env
+.vscode
+OTAKUTIME/db.sqlite3
+OTAKUTIME/__pycache__/

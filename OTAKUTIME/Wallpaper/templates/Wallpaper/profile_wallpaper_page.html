@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}
+
+{%endblock%}
+
+{%block content%}
+<div class="container">
+  <h1>Post</h1>
+  {% for wallpaper in wallpaper %}
+  <h2><a href="{% url 'WALLPAPER_PAGE:detail' slug=wallpaper.slug %}">{{wallpaper.title}}</a></h2>
+  
+  <p>{{wallpaper.date}}</p> 
+  {% endfor %}
+</div>
+<a href="{% url 'home' %}">Return</a>
+{% endblock %}
+  

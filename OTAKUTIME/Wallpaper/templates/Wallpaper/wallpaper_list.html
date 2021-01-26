@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+{%block title%}
+
+{%endblock%}
+
+
+<html>
+    <body>
+      {%block content%}
+
+        <div class="container">
+          <h1>Wallpapers</h1>
+          <li>
+            
+            <li>
+              {% if user.is_authenticated %}
+              <a href="{% url 'WALLPAPER_PAGE:create' %}">Upload new Wallpaper</a>
+            
+              <a href="{% url 'WALLPAPER_PAGE:profile_wallpaper_page' %}">My Wallpaper</a>
+            
+              {% endif %}
+            
+            
+            </li>
+          </li>
+          {% for wallpaper in wallpaper %}
+          <h2><a href="{% url 'WALLPAPER_PAGE:detail' slug=wallpaper.slug %}">{{wallpaper.title}}</a></h2>
+          <img src="{{wallpaper.wallpaper.url}}"  style='height: 20%; width: 20%; object-fit: contain'/>
+
+          <p>{{wallpaper.snippet}}</p>
+          <p>{{wallpaper.date}}</p> 
+          {% endfor %}
+        </div>
+        <a href="{% url 'home' %}">Return</a>
+      {% endblock %}
+    </body>
+</html>
+  
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+body{
+    background-color: #262d38f2;
+
+    color:fff
+}
+body *{
+ font-family:arial;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight:normal;
+    margin:0;
+}
+
+a{
+    color:#F06292
+
+
+}
+
+a:hover{
+    color:#C2185B;
+    text-decoration:none;
+}
+ 
+.wrapper{
+    max-width:960px;
+    margin:0 auto;
+}
+div.wrapper h1{
+    text-align:center;
+    margin:100px auto;
+    font-size:2.4em;
+}
+
+header{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    padding:20px 0;
+}
+nav li{
+    display: inline-block;
+    margin-left:20px;
+}

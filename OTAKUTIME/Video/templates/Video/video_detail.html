@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="video_detail">
+    
+    
+
+
+        <h2>{{video.title}}</h2>
+
+
+        {% if video.video %}
+        <video width="1280" height="720" controls="controls">       
+         <source src="{{video.video.url}}" type="video/mp4"> 
+        </video>  
+        {% endif %}
+
+
+
+
+        <p>{{video.body}}</p>
+
+    
+    <a href="{% url 'VIDEO_PAGE:video_page' %}">Return</a>
+</div>
+{% endblock %}
+
+
+
+

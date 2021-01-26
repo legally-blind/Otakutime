@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="song_detail">
+    
+    
+
+
+        <h2>{{song.title}}</h2>
+
+
+        {% if song.song %}
+        <audio controls>
+            <source src="{{song.song.url}}" type="audio/mp3">
+            
+        </audio>
+        {% endif %}
+
+
+
+
+        <p>{{song.body}}</p>
+
+    
+    <a href="{% url 'SONG_PAGE:song_page' %}">Return</a>
+</div>
+{% endblock %}
+
+
+
+

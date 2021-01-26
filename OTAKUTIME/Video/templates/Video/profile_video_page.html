@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}
+
+{%endblock%}
+
+{%block content%}
+<div class="container">
+  <h1>Post</h1>
+  {% for video in video %}
+  <h2><a href="{% url 'VIDEO_PAGE:detail' slug=video.slug %}">{{video.title}}</a></h2>
+  
+  <p>{{video.date}}</p> 
+  {% endfor %}
+</div>
+<a href="{% url 'home' %}">Return</a>
+{% endblock %}
+  
